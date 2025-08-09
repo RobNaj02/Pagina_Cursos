@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academia AprendeMás</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+
+  <!-- AOS (animaciones) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+  <!-- Splide.js (slider) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css"/>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f7f9fc;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #333;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .category {
+      background: white;
+      border-radius: 10px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .category:hover {
+      transform: translateY(-5px);
+    }
+
+    .splide__slide {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .faq-item {
+      background: white;
+      margin-bottom: 15px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    }
+
+    .faq-item h4 {
+      margin: 0 0 10px;
+    }
+
+    .subscribe-form {
+      text-align: center;
+    }
+
+    .subscribe-form input[type="email"] {
+      padding: 12px;
+      width: 300px;
+      max-width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-right: 10px;
+    }
+
+    .subscribe-form button {
+      padding: 12px 20px;
+      border: none;
+      background: #3498db;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
+
+    .courses {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.course {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  width: 320px; /* ancho fijo para uniformidad */
+  display: flex;
+  flex-direction: column;
+}
+
+.course img {
+  width: 100%;
+  height: 180px;      /* altura fija */
+  object-fit: cover;  /* recorta la imagen para llenar */
+  display: block;
+}
+
+.course-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-content h3 {
+  margin-bottom: 10px;
+}
+
+.course-content p {
+  flex-grow: 1;
+  color: #555;
+  font-size: 14px;
+}
+
+.course-content button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.course-content button:hover {
+  background-color: #2980b9;
+}
+  </style>
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <h1>Academia AprendeMás</h1>
+    <p>Transforma tu futuro con nuestros cursos en línea</p>
+  </header>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Cursos</a>
+    <a href="#">Nosotros</a>
+    <a href="#">Contacto</a>
+  </nav>
+
+  <!-- 🎞️ Video Promocional -->
+  <section data-aos="zoom-in">
+    <h2 class="section-title">Descubre AprendeMás</h2>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/O6Xo21L0ybE" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- 🖼️ Slider de testimonios -->
+  <section data-aos="fade-up">
+    <h2 class="section-title">Lo que dicen nuestros estudiantes</h2>
+    <div class="splide" id="testimonial-slider">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">"Me encantó el curso de programación. Muy claro y práctico. ¡Gracias!"<br><strong>- Laura P.</strong></li>
+          <li class="splide__slide">"Excelente calidad de contenido y atención al estudiante."<br><strong>- Marcos R.</strong></li>
+          <li class="splide__slide">"Ahora tengo trabajo gracias a lo aprendido en AprendeMás."<br><strong>- Ana V.</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📚 Categorías -->
+  <section data-aos="fade-up">
+    <h2 class="section-title">Categorías de Cursos</h2>
+    <div class="categories">
+      <div class="category">Programación</div>
+      <div class="category">Diseño Gráfico</div>
+      <div class="category">Idiomas</div>
+      <div class="category">Finanzas</div>
+      <div class="category">Desarrollo Personal</div>
+    </div>
+  </section>
+  <section class="container">
+    <h2 class="section-title" data-aos="fade-up">Cursos Destacados</h2>
+    <div class="courses" id="courses-container"></div>
+  </section>
+  <section class="hero">
+    <h2>Aprende desde casa con expertos</h2>
+    <p>Cursos certificados y 100% online</p>
+  </section>
+
+  <section class="container">
+    <h2 class="section-title">Cursos Destacados</h2>
+    <div class="courses">
+      <div class="course">
+        <img src="./assets/Programacion.jpg" alt="Curso de Programación">
+        <div class="course-content">
+          <h3>Programación Web</h3>
+          <p>Domina HTML, CSS, JavaScript y crea sitios impresionantes.</p>
+          <button>Inscribirse</button>
+        </div>
+      </div>
+
+      <div class="course">
+        <img src="./assets/Diseno.jpg" alt="Curso de Diseño">
+        <div class="course-content">
+          <h3>Diseño Gráfico</h3>
+          <p>Aprende a crear diseños atractivos con herramientas profesionales.</p>
+          <button>Inscribirse</button>
+        </div>
+      </div>
+
+      <div class="course">
+        <img src="./assets/Marketing.jpg" alt="Curso de Marketing">
+        <div class="course-content">
+          <h3>Marketing Digital</h3>
+          <p>Publicidad en redes, SEO, email marketing y más.</p>
+          <button>Inscribirse</button>
+        </div>
+      </div>
+    </div>
+  </section>
+ <!-- ❓ FAQ -->
+  <section data-aos="fade-up">
+    <h2 class="section-title">Preguntas Frecuentes</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h4>¿Los cursos tienen certificado?</h4>
+        <p>Sí, todos los cursos ofrecen certificado digital al finalizar.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Cuánto tiempo duran los cursos?</h4>
+        <p>Los cursos son autogestionados, puedes completarlos a tu ritmo.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Puedo acceder desde mi celular?</h4>
+        <p>¡Claro! Nuestra plataforma es compatible con todos los dispositivos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📩 Newsletter -->
+  <section data-aos="fade-up">
+    <h2 class="section-title">Suscríbete para recibir novedades</h2>
+    <div class="subscribe-form">
+      <input type="email" placeholder="Tu correo electrónico">
+      <button>Suscribirme</button>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Academia AprendeMás. Todos los derechos reservados.</p>
+  </footer>
+  <script src="js/cart.js"></script>
+  <script src="js/animations.js"></script>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
+  <script>
+    AOS.init();
+
+    new Splide('#testimonial-slider', {
+      type: 'loop',
+      perPage: 1,
+      autoplay: true,
+      interval: 4000,
+      arrows: false,
+      pagination: true
+    }).mount();
+  </script>
+</body>
+</html>
